@@ -1,7 +1,6 @@
 ---
 title: "Eating Out"
 author: "Michelle Benavides"
-date: "July 9, 2022"
 output: 
   html_document:
     number_sections: true
@@ -39,7 +38,7 @@ barchartGC(~race + eatout,data=mydata, type="percent")
 
 ```
 
-
+According to the bar graph displaying the frequency of whether or not different races would rather eat out, it seems as though a higher frequency of all listed race would rather eat out than not, especially in the white race category. Then according to the bar graph displaying the percentage of whether or not different races would rather eat out, it seems as though the raito of people in the white race category is about 80:20, and the ratio of people in the black race category is about 70:30, and last the people in the "other" race category is alao about 70:30. However, it also looks like the population of white people is Significantly higher than the population in the other races. 
 
 
 
