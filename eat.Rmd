@@ -47,3 +47,9 @@ colPerc(table1)
 ```
 
 This numerical chart shows the exact percentage of how many people in each race would rather eat out than not and shows the frequency of people in each race would rather eat out than not. The percentage of white people who would rather eat out is 83.11% compared to the 16.89% who wouldn't. Next, the percentage of black people who would rather eat out is 69.04% compared to the 30.96% who wouldn't. Lastly, the percentage of "other" people who would rather eat out is 27.88% compared to the 16.89% who wouldn't. 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+```
+
