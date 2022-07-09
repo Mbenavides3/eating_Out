@@ -53,3 +53,13 @@ chisq.test(table1)
 chisqtestGC(table1)
 ```
 
+Based on the Chi-squared test above, the p-value determined is a very small which means that there is a difference between the frequency of eating out of the three racial groups. Therefore, we can reject the null hypothesis. To determine specifically which groups are different another type of test will be conducted... 
+
+```{r}
+fisherXY(mydata$race,mydata$eatout)
+```
+
+
+
+
+
