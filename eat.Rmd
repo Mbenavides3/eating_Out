@@ -32,6 +32,8 @@ mydata <- select(GSS,race,age,eatout)
 mydata <- na.omit(mydata)
 ```
 
+### Graphical Results
+
 ```{r}
 barchartGC(~race + eatout,data=mydata)
 barchartGC(~race + eatout,data=mydata, type="percent")
@@ -39,6 +41,8 @@ barchartGC(~race + eatout,data=mydata, type="percent")
 ```
 
 According to the bar graph displaying the frequency of whether or not different races would rather eat out, it seems as though a higher frequency of all listed race would rather eat out than not, especially in the white race category. Then according to the bar graph displaying the percentage of whether or not different races would rather eat out, it seems as though the raito of people in the white race category is about 80:20, and the ratio of people in the black race category is about 70:30, and last the people in the "other" race category is alao about 70:30. However, it also looks like the population of white people is Significantly higher than the population in the other races. 
+
+### Numerical Results
 
 ```{r}
 table1 <- xtabs(~race + eatout, data=mydata)
@@ -48,6 +52,8 @@ colPerc(table1)
 
 This numerical chart shows the exact percentage of how many people in each race would rather eat out than not and shows the frequency of people in each race would rather eat out than not. The percentage of white people who would rather eat out is 83.11% compared to the 16.89% who wouldn't. Next, the percentage of black people who would rather eat out is 69.04% compared to the 30.96% who wouldn't. Lastly, the percentage of "other" people who would rather eat out is 27.88% compared to the 16.89% who wouldn't. 
 
+### Inferential results
+
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
@@ -56,10 +62,11 @@ chisqtestGC(table1)
 Based on the Chi-squared test above, the p-value determined is a very small which means that there is a difference between the frequency of eating out of the three racial groups. Therefore, we can reject the null hypothesis. To determine specifically which groups are different another type of test will be conducted... 
 
 ```{r}
-fisherXY(mydata$race,mydata$eatout)
+fisherXY(mydata$race,mydata$eatout, printAll = TRUE)
 ```
 
+A Fisher XY test is conducted to supplement the results from the Chi-Squared test from before. Based on this test, which compared two groups at a time, we can see that there is a difference in terms of the frequency of eating out between races. 
 
+### Discussion and Conclusion
 
-
-
+The question being answered in this activity is whether there is a difference in the frequency of eating out of various racial groups. The first test conducted is plotting a barplot of the data, and the estimated values show that there is a difference in the frequency of eating out among the groups. This is further confirmed by the numerical results which showed that actual values in terms of percentages of people who eat out and do not eat out for each group. Lastly, the Chi-squared test and the Fisher XY exact test confirmed that there is a difference in terms of the frequency of eating out between white, black, and "others". However, it also claims that there is not a difference in the data for black people and others. Overall, we can reject the null hypothesis and claim that there is a difference in the frequency of eating out of various racial groups. 
